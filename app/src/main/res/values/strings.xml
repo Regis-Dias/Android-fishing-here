@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TesteLogin</string>
+    <string name="lblUsuario">Usuário</string>
+    <string name="lblSenha">Senha</string>
+    <string name="lblAcessar">Acessar</string>
+    <string name="lblAtualizarTabelas">Atualizar Tabelas</string>
+    <string name="lblEnviarMensagem">Enviar Mensagem</string>
+</resources>
