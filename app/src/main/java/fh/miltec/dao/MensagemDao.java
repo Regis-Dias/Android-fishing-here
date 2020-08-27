@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.testelogin.Conexao;
+import com.fh.miltec.Conexao;
 
 import java.util.ArrayList;
 import java.util.List;

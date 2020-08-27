@@ -6,25 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MensagemActivity">
 
-    <TextView
-        android:id="@+id/txtMensagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Mensagen(s)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
-    <ListView
-        android:id="@+id/lvMensagem"
-        android:layout_width="369dp"
-        android:layout_height="538dp"
-        android:choiceMode="singleChoice"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMensagem" />
+        <TextView
+            android:id="@+id/txtMensagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Mensagen(s)"
+            android:textAlignment="center" />
+
+
+        <ListView
+            android:id="@+id/lvMensagem"
+            android:layout_width="match_parent"
+            android:layout_height="509dp"
+            android:choiceMode="singleChoice">
+
+        </ListView>
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

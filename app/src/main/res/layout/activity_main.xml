@@ -14,6 +14,13 @@
         tools:layout_editor_absoluteY="1dp"
         tools:ignore="MissingConstraints">
 
+
+        <ImageView
+            android:id="@+id/imvConfiguracao"
+            android:layout_width="48dp"
+            android:layout_height="41dp"
+            app:srcCompat="@drawable/engrenagem" />
+
         <TextView
             android:id="@+id/lblUsuario"
             android:layout_width="match_parent"
@@ -26,7 +33,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="regis" />
+            android:text="" />
 
         <TextView
             android:id="@+id/lblSenha"
@@ -40,7 +47,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
-            android:text ="123"/>
+            android:text =""/>
 
         <Button
             android:id="@+id/btnLogin"
@@ -56,15 +63,6 @@
             android:layout_gravity="center"
             android:text="@string/lblAtualizarTabelas"
             android:textColor="#ffffff" />
-
-        <Button
-            android:id="@+id/btnEnviarMensagem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/lblEnviarMensagem"
-            android:textColor="#ffffff"
-            android:visibility="invisible" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

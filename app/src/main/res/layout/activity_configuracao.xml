@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfiguracaoActivity">
+
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+    <TextView
+        android:id="@+id/lblIpServidor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ip do Servidor" />
+
+    <EditText
+        android:id="@+id/txtIpServidor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/lblPorta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Porta" />
+
+    <EditText
+        android:id="@+id/txtPorta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/lblTemporizadorMensagemServidor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intervalo em segundos para o envio de mensagens" />
+
+    <EditText
+        android:id="@+id/txtTemporizadorMensagemServidor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="time"
+        android:text="" />
+
+        <Button
+            android:id="@+id/btnSalvaPreferenciasConfiguracao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Salvar"
+            android:textColor="#ffffff" />
+
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

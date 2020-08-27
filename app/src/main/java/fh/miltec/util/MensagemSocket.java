@@ -1,18 +1,27 @@
 package fh.miltec.util;
-import android.widget.Toast;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.fh.miltec.Configuracao;
+import com.fh.miltec.ConfiguracaoActivity;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class MensagemSocket {
 
     private String mensagem;
+
+
+
     public MensagemSocket( String mensagem){
         this.setMensagem(mensagem);
+
     }
 
     public String getMensagem() {
@@ -23,12 +32,19 @@ public class MensagemSocket {
         this.mensagem = mensagem;
     }
 
-    public void enviar(){
+    public void enviar(Context co){
+
+        final Context context = co;
+
         new Thread(new Runnable()
         {
             public void run() {
                 try {
-                    Socket soc = new Socket("192.168.0.50", 11000);
+
+                    Configuracao conf = new Configuracao(context);
+                    conf.lerPrefereciasConfiguracao();
+
+                    Socket soc = new Socket(conf.ip, conf.porta);
                     PrintWriter writer = new PrintWriter(soc.getOutputStream());
                     writer.write( mensagem.concat("<EOF>") );
                     writer.flush();
@@ -41,9 +57,7 @@ public class MensagemSocket {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-
             }
         }).start();
     }
-
 }
