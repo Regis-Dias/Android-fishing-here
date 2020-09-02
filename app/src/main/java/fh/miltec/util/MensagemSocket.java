@@ -1,27 +1,31 @@
 package fh.miltec.util;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import com.fh.miltec.Configuracao;
-import com.fh.miltec.ConfiguracaoActivity;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import static android.content.Context.MODE_PRIVATE;
-
 public class MensagemSocket {
 
     private String mensagem;
-
-
+    private Boolean erro;
 
     public MensagemSocket( String mensagem){
         this.setMensagem(mensagem);
+        this.setErro(false);
 
+    }
+
+    public Boolean getErro() {
+        return erro;
+    }
+
+    public void setErro(Boolean erro) {
+        this.erro = erro;
     }
 
     public String getMensagem() {
@@ -43,19 +47,25 @@ public class MensagemSocket {
 
                     Configuracao conf = new Configuracao(context);
                     conf.lerPrefereciasConfiguracao();
-
                     Socket soc = new Socket(conf.ip, conf.porta);
                     PrintWriter writer = new PrintWriter(soc.getOutputStream());
-                    writer.write( mensagem.concat("<EOF>") );
-                    writer.flush();
-                    writer.close();
-                    soc.close();
+                    if(soc.isConnected()) {
+                        writer.write(mensagem.concat("<EOF>"));
+                        writer.flush();
+                        writer.close();
+                        soc.close();
+                        setErro(false);
+                    }else {
+                        setErro(true);
+                    }
                 } catch (UnknownHostException e) {
                     // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    setErro(true);
+                    //e.printStackTrace();
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    //e.printStackTrace();
+                    setErro(true);
                 }
             }
         }).start();

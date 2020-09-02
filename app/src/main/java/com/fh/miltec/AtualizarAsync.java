@@ -1,6 +1,7 @@
 package com.fh.miltec;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,10 +29,18 @@ public class AtualizarAsync extends AsyncTask<Void,Void, List<Usuario>> {
         protected List<Usuario> doInBackground(Void... params) {
 
             AtualizarTabelas at = new AtualizarTabelas(objectMapper, context);
+            Configuracao conf = new Configuracao(context);
 
-            at.processarAtualizacaoMensagem("http://fishingheresmal.azurewebsites.net/api/mensagem");
-
-           return at.processarAtualizacaoUsuario("http://fishingheresmal.azurewebsites.net/api/usuario");
+            if(conf.existeConfiguracao()) {
+                conf.lerPrefereciasConfiguracao();
+                at.processarAtualizacaoMensagem(conf.urlMensagem);
+               return at.processarAtualizacaoUsuario(conf.urlUsuario);
+            }
+            else
+            {
+                Toast.makeText(null, "Configurações nao foram estabelecidas", Toast.LENGTH_LONG).show();
+                return null;
+            }
         }
 
         @Override
@@ -40,3 +49,8 @@ public class AtualizarAsync extends AsyncTask<Void,Void, List<Usuario>> {
         }
 
 }
+
+//url Mensagem
+//"http://fishingheresmal.azurewebsites.net/api/mensagem"
+//url Usuario
+//"http://fishingheresmal.azurewebsites.net/api/usuario"

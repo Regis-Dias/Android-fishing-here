@@ -4,33 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/banner"
     tools:context=".MensagemActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <ImageView
+            android:id="@+id/imvIcone3"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            app:srcCompat="@mipmap/ic_launcher_foreground" />
+
 
         <TextView
-            android:id="@+id/txtMensagem"
+            android:id="@+id/txtJanelaMensagem"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="Mensagen(s)"
-            android:textAlignment="center" />
-
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:text="Enviar Mensagem"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            tools:ignore="RtlCompat" />
 
         <ListView
             android:id="@+id/lvMensagem"
             android:layout_width="match_parent"
-            android:layout_height="509dp"
-            android:choiceMode="singleChoice">
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"></ListView>
 
-        </ListView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center|bottom"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btnFechar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Sair"
+                android:textColor="#ffffff"
+                android:background="#275975"/>
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

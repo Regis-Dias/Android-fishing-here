@@ -1,8 +1,15 @@
 <resources>
-    <string name="app_name">TesteLogin</string>
+    <string name="app_name">Fishing Here</string>
     <string name="lblUsuario">Usuário</string>
     <string name="lblSenha">Senha</string>
     <string name="lblAcessar">Acessar</string>
     <string name="lblAtualizarTabelas">Atualizar Tabelas</string>
     <string name="lblEnviarMensagem">Enviar Mensagem</string>
+
+
+    <integer-array name="random_images_mensagem">
+        <item>@drawable/_check</item>
+        <item>@drawable/_sirene</item>
+        <item>@drawable/_retirar</item>
+    </integer-array>
 </resources>
