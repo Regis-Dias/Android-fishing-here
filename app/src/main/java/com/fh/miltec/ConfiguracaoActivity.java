@@ -19,6 +19,11 @@ public class ConfiguracaoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_configuracao);
 
         gravarPrefereciasConfiguracao();
+        atribuiCampoPreferenciaConfiguracao();
+
+    }
+
+    private void atribuiCampoPreferenciaConfiguracao() {
 
         Configuracao conf = new Configuracao(getBaseContext());
 

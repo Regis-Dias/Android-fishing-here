@@ -65,32 +65,6 @@ public class MensagemActivity extends AppCompatActivity {
         });
     }
 
-   /* private void prepararListaMensagens() {
-
-        ListView lista = (ListView) findViewById(R.id.lvMensagem);
-
-        final ArrayList<Mensagem> mensagens = new ArrayList<Mensagem>(new MensagemDao(getBaseContext()).consultaMensagem());
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, preencherDados());
-        lista.setAdapter(arrayAdapter);
-
-        //persistencia das credenciais do usuairo logado.
-        final SharedPreferences prefs = getBaseContext().getSharedPreferences(NOME_PREFERENCE, MODE_PRIVATE);
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                enviarMensagem(String.format("%02d", prefs.getInt("id", 0)) +
-                        String.format("%02d", mensagens.get(position).getId()), true);
-
-                //Toast.makeText(getApplicationContext(), "Mensagem: " + mensagens.get(position).toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
-
-
-
 
     private ArrayList<String> preencherDados() {
 
