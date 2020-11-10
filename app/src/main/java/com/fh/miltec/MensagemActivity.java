@@ -101,7 +101,7 @@ public class MensagemActivity extends AppCompatActivity {
     }
 
 
-    @Override
+   /* @Override
     protected void onResume() {
         Configuracao conf = new Configuracao(getBaseContext());
         conf.lerPrefereciasConfiguracao();
@@ -115,7 +115,7 @@ public class MensagemActivity extends AppCompatActivity {
             }
         }, delay);
         super.onResume();
-    }
+    }*/
 
     @Override
     protected void onPause() {

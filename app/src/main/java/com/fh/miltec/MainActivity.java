@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +27,7 @@ import java.util.List;
 
 import fh.miltec.dao.UsuarioDao;
 import fh.miltec.model.Usuario;
+import fh.miltec.restabelecer.RestartServiceBroadcastReceiver;
 import fh.miltec.util.MensagemSocket;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,6 +51,18 @@ public class MainActivity extends AppCompatActivity {
         usuarioJaLogou();
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            RestartServiceBroadcastReceiver.scheduleJob(getApplicationContext());
+        } else {
+            ProcessaVersaoAndroidServico bck = new ProcessaVersaoAndroidServico();
+            bck.launchService(getApplicationContext());
+        }
+    }
+
 
     private void prepararBotaoAcessar() {
         Button btLogin = (Button) findViewById(R.id.btnLogin);
